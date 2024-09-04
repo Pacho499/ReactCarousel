@@ -1,8 +1,12 @@
+import Carousel from "./Carousel";
+import images from "./images";
+import "./App.css";
+
 function App() {
   return (
-    <>
-      <h1>hello world!</h1>
-    </>
+    <div className="App">
+      <Carousel images={images} />
+    </div>
   );
 }
 
