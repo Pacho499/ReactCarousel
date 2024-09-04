@@ -4,6 +4,7 @@
   height: 50%;
   background-color: #181818;
   display: flex;
+  position: relative;
 }
 
 .carousel {
@@ -42,4 +43,32 @@
 ::-webkit-scrollbar {
   height: 0;
   width: 0;
+}
+
+.carousel-btn {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  z-index: 2;
+  transform: rotate(45deg);
+  top: 50%;
+  cursor: pointer;
+}
+
+.left-btn {
+  border-bottom: 4px solid gray;
+  border-left: 4px solid gray;
+  left: 20px;
+}
+
+.right-btn {
+  border-right: 4px solid gray;
+  border-top: 4px solid gray;
+  right: 20px;
+}
+
+@media (width < 600px) {
+  .carousel-btn {
+    display: none;
+  }
 }
