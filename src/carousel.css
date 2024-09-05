@@ -46,25 +46,53 @@
 }
 
 .carousel-btn {
-  height: 30px;
-  width: 30px;
   position: absolute;
   z-index: 2;
-  transform: rotate(45deg);
   top: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  fill: #ffffff;
+  background-color: #777;
+  padding: 0.5rem;
+  border-radius: 90%;
+  transition: all 0.2s ease-in-out;
 }
 
-.left-btn {
-  border-bottom: 4px solid gray;
-  border-left: 4px solid gray;
+.carousel-btn:hover {
+  fill: #777;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.carousel-left-btn {
   left: 20px;
 }
 
-.right-btn {
-  border-right: 4px solid gray;
-  border-top: 4px solid gray;
+.carousel-right-btn {
   right: 20px;
+}
+
+.carousel-indicator-container {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  gap: 1rem;
+  fill: #ffffff;
+  left: 40%;
+}
+
+.carousel-indicator-container .active {
+  fill: #181818;
+  transition: all 0.2s ease-in-out;
+}
+
+.indicator {
+  color: #181818;
+  background-color: #181818;
 }
 
 @media (width < 600px) {
