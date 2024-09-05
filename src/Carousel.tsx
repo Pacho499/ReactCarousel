@@ -29,11 +29,21 @@ function Carousel({ images }: { images: Image[] }) {
 
       //at the end scrollTo(xscroll, yscroll)
       //it takes the actual position and give +500 if 1 -500 if -1
-      carousel.current.scrollTo(carousel.current.scrollLeft + width * delta, 0);
 
       setCount((c) => c + delta);
+      carousel.current.scrollTo(carousel.current.scrollLeft + width * delta, 0);
+
       return;
     }
+  };
+
+  const incrementCarouselIndicator = (delta: number) => {
+    if (!carousel.current) return;
+
+    const width = carousel.current.offsetWidth;
+
+    setCount(delta);
+    carousel.current.scrollTo(width * delta, 0);
   };
 
   return (
@@ -90,6 +100,7 @@ function Carousel({ images }: { images: Image[] }) {
               height={15}
               width={15}
               className={key === count ? "active" : ""}
+              onClick={() => incrementCarouselIndicator(key)}
             >
               <circle cx="50" cy="50" r="50" />
             </svg>
